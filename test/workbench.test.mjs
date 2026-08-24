@@ -42,3 +42,14 @@ test("a future plugin can register and open side and bottom views through the pu
   disposeSide();
   assert.deepEqual(workbench.getSnapshot().views.map(view => view.id), ["problems"]);
 });
+
+test("README keeps the user-facing install contract documented", async () => {
+  const readme = await readFile(join(root, "README.md"), "utf8");
+  const zhReadme = await readFile(join(root, "README.zh.md"), "utf8");
+  const packageJson = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
+  assert.match(readme, /@relay\/dsh-plugin-workbench/);
+  assert.match(readme, /github:yangbobo2021\/relay-dsh-plugin-workbench#main/);
+  assert.match(readme, /\[中文\]\(README\.zh\.md\)/);
+  assert.match(zhReadme, /\[English\]\(README\.md\)/);
+  assert.ok(packageJson.files.includes("README.zh.md"));
+});
