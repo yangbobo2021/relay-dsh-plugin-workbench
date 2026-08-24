@@ -20,6 +20,11 @@ test("workbench is the only Relay plugin that replaces the official layout", asy
   assert.match(patch, /@relay\/dsh-plugin-workbench/);
 });
 
+test("workbench client initialization is idempotent for dependent plugin activation rows", async () => {
+  const source = await readFile(join(root, "src/client/layout/index.ts"), "utf8");
+  assert.match(source, /ctx\.get\('workbench' as never\) !== undefined/);
+});
+
 test("a future plugin can register and open side and bottom views through the public contract", () => {
   const calls = [];
   const workbench = new WorkbenchController();

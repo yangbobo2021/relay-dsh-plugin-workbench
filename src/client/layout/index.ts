@@ -32,6 +32,7 @@ export interface DetailsOwnerProps {}
 export const inject = ['slots', 'theme']
 
 export function apply(ctx: ClientContext): void {
+  if (ctx.get('workbench' as never) !== undefined) return
   const workbench = new WorkbenchController()
   ctx.effect(() => {
     const disposeLayout = ctx.reflect.provide('layout', workbench)
