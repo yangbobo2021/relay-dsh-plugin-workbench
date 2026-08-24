@@ -17,7 +17,7 @@ test("workbench owns a generic layout and two keyed extension regions", async ()
 test("workbench is the only Relay plugin that replaces the official layout", async () => {
   const patch = await readFile(join(root, "cordis.patch.yml"), "utf8");
   assert.match(patch, /- id: ui-layout\n\s+disabled: true/);
-  assert.match(patch, /@relay\/dsh-plugin-workbench/);
+  assert.match(patch, /relay-dsh-plugin-workbench/);
 });
 
 test("workbench client initialization is idempotent for dependent plugin activation rows", async () => {
@@ -48,7 +48,7 @@ test("README keeps the user-facing install contract documented", async () => {
   const zhReadme = await readFile(join(root, "README.zh.md"), "utf8");
   const screenshot = await readFile(join(root, "docs/images/dsh-workbench-files-panel.png"));
   const packageJson = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
-  assert.match(readme, /@relay\/dsh-plugin-workbench/);
+  assert.match(readme, /relay-dsh-plugin-workbench/);
   assert.match(readme, /github:yangbobo2021\/relay-dsh-plugin-workbench#main/);
   assert.match(readme, /docs\/images\/dsh-workbench-files-panel\.png/);
   assert.match(readme, /\[中文\]\(README\.zh\.md\)/);

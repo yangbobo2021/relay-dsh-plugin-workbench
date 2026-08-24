@@ -1,5 +1,5 @@
 {
-  "name": "@relay/dsh-plugin-workbench",
+  "name": "relay-dsh-plugin-workbench",
   "version": "0.1.0",
   "description": "Extensible workbench shell for DeepSeek Harness with generic side and bottom view registration.",
   "type": "module",

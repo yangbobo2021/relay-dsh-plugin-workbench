@@ -2,9 +2,9 @@
 
 [English](README.md) | 中文
 
-**npm 包名：** `@relay/dsh-plugin-workbench`
+**npm 包名：** `relay-dsh-plugin-workbench`
 
-`@relay/dsh-plugin-workbench` 为官方
+`relay-dsh-plugin-workbench` 为官方
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）Web UI
 增加一个可复用的 Workbench 壳层。其他插件可以通过它注册右侧面板和底部面板，
 不需要修改 DSH 官方核心代码。
@@ -25,8 +25,8 @@
 - 开发另一个 DSH Workbench 视图插件；
 - 希望先在某个 DSH Profile 里准备好公共 Workbench 布局，再安装本地功能插件。
 
-使用 GitHub 开发版本的 `@relay/dsh-plugin-files` 或
-`@relay/dsh-plugin-terminal` 时，需要手动一起安装 Workbench。DSH Profile 中的
+使用 GitHub 开发版本的 `relay-dsh-plugin-files` 或
+`relay-dsh-plugin-terminal` 时，需要手动一起安装 Workbench。DSH Profile 中的
 pnpm 会阻止 GitHub 包作为传递依赖，所以开发版本安装命令会同时列出 Workbench 和
 功能插件。
 
@@ -57,14 +57,11 @@ pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo202
 
 #### npm 正式版本
 
-`@relay/dsh-plugin-workbench` 发布到 npm 后，可以这样安装：
+可以这样安装 npm 正式包：
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add relay-dsh-plugin-workbench@latest
 ```
-
-编写本文档时，该 npm 包尚未发布。如果命令提示 `404 Not Found`，请使用上面的
-GitHub 安装方式。
 
 ### 2. 启动或重启 DSH Web
 
@@ -86,7 +83,7 @@ Terminal 插件。
 - 通用右侧面板区域
 - 通用底部面板区域
 - 供视图插件使用的 `ctx.workbench` 注册服务
-- `@relay/dsh-plugin-workbench/contracts` 公共类型入口
+- `relay-dsh-plugin-workbench/contracts` 公共类型入口
 - 幂等激活能力：多个功能插件同时带入 Workbench 时不会冲突
 
 功能插件应通过 `ctx.workbench`、DSH keyed slots 和公开 contracts 交互，不应导入
@@ -105,9 +102,9 @@ Workbench 只负责公共面板壳层。Files、Terminal、Codex、Claude、Even
 修改插件前先停止 DSH Web，完成后重新启动。
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-workbench
-dsh plugin --profile web update @relay/dsh-plugin-workbench
-dsh plugin --profile web remove @relay/dsh-plugin-workbench
+dsh plugin --profile web why relay-dsh-plugin-workbench
+dsh plugin --profile web update relay-dsh-plugin-workbench
+dsh plugin --profile web remove relay-dsh-plugin-workbench
 ```
 
 如果是 GitHub 安装，`pnpm` 会在 DSH Profile 中记录来源。可以用 `why` 命令查看。
@@ -124,7 +121,7 @@ dsh plugin --profile web remove @relay/dsh-plugin-workbench
 先重启 DSH Web，并检查插件来源：
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-workbench
+dsh plugin --profile web why relay-dsh-plugin-workbench
 ```
 
 如果安装的是 GitHub `main`，可以尝试固定到一个已知 commit SHA。

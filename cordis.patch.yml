@@ -3,4 +3,4 @@
 
 - insert:
     - id: relay-workbench-host
-      name: '@relay/dsh-plugin-workbench'
+      name: 'relay-dsh-plugin-workbench'

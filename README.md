@@ -2,9 +2,9 @@
 
 English | [中文](README.zh.md)
 
-**npm package:** `@relay/dsh-plugin-workbench`
+**npm package:** `relay-dsh-plugin-workbench`
 
-`@relay/dsh-plugin-workbench` adds a reusable Workbench shell to the official
+`relay-dsh-plugin-workbench` adds a reusable Workbench shell to the official
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH) Web
 UI. It gives other plugins a safe place to register right-side panels and bottom
 panels without modifying DSH core code.
@@ -30,7 +30,7 @@ Install Workbench directly when you want to:
   local feature plugins.
 
 Install it manually when using GitHub development builds of
-`@relay/dsh-plugin-files` or `@relay/dsh-plugin-terminal`. DSH's pnpm profile
+`relay-dsh-plugin-files` or `relay-dsh-plugin-terminal`. DSH's pnpm profile
 blocks GitHub packages as transitive dependencies, so development installs list
 Workbench and the feature plugin in the same command.
 
@@ -51,7 +51,7 @@ Stop a running DSH Web process before changing Profile plugins.
 
 #### GitHub development build
 
-Use this today, before the first npm release:
+Use this when you want the latest development build:
 
 ```bash
 pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
@@ -61,14 +61,11 @@ For a reproducible install, replace `#main` with a tag or full commit SHA.
 
 #### npm release
 
-After `@relay/dsh-plugin-workbench` is published to npm, install it with:
+Install the published package with:
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add relay-dsh-plugin-workbench@latest
 ```
-
-At the time this README was written, the npm package had not been published yet.
-If the command reports `404 Not Found`, use the GitHub install above.
 
 ### 2. Start or restart DSH Web
 
@@ -90,7 +87,7 @@ install the Files or Terminal plugin instead.
 - A generic right-side panel region
 - A generic bottom panel region
 - The public `ctx.workbench` registry for view plugins
-- Public contracts at `@relay/dsh-plugin-workbench/contracts`
+- Public contracts at `relay-dsh-plugin-workbench/contracts`
 - Idempotent activation, so multiple feature plugins can safely bring Workbench
   into the same DSH Profile
 
@@ -112,13 +109,13 @@ Terminal, Codex, Claude, and Events remain separate optional plugins.
 Stop DSH Web before changing plugins, then restart it afterward.
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-workbench
-dsh plugin --profile web update @relay/dsh-plugin-workbench
-dsh plugin --profile web remove @relay/dsh-plugin-workbench
+dsh plugin --profile web why relay-dsh-plugin-workbench
+dsh plugin --profile web update relay-dsh-plugin-workbench
+dsh plugin --profile web remove relay-dsh-plugin-workbench
 ```
 
 For GitHub installs, `pnpm` records the package source inside the DSH Profile.
-Run `dsh plugin --profile web why @relay/dsh-plugin-workbench` to inspect it.
+Run `dsh plugin --profile web why relay-dsh-plugin-workbench` to inspect it.
 
 ## Troubleshooting
 
@@ -132,7 +129,7 @@ other plugins. Install Files or Terminal to see a new panel.
 Restart DSH Web and inspect the plugin source:
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-workbench
+dsh plugin --profile web why relay-dsh-plugin-workbench
 ```
 
 If the package came from GitHub `main`, try pinning a known commit SHA.
