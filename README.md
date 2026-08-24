@@ -11,8 +11,14 @@ panels without modifying DSH core code.
 
 This package does not add a visible feature by itself. Install it directly only
 when you are developing or testing another Workbench view plugin. Normal users
-usually install a feature plugin such as Files or Terminal; those plugins install
-Workbench automatically.
+usually install Workbench together with a feature plugin such as Files or
+Terminal.
+
+![Workbench hosting the Relay Files side panel in DSH Web](docs/images/dsh-workbench-files-panel.png)
+
+The screenshot was captured from official DSH `0.1.1-rc.2` with Workbench and
+Files installed. Workbench alone keeps the default DSH layout until a feature
+plugin registers a view.
 
 ## Do I Need This Plugin?
 
@@ -23,9 +29,10 @@ Install Workbench directly when you want to:
 - make sure a DSH Profile already has the common Workbench layout before adding
   local feature plugins.
 
-You do not need to install it manually before installing
-`@relay/dsh-plugin-files` or `@relay/dsh-plugin-terminal`. They bring Workbench
-with them.
+Install it manually when using GitHub development builds of
+`@relay/dsh-plugin-files` or `@relay/dsh-plugin-terminal`. DSH's pnpm profile
+blocks GitHub packages as transitive dependencies, so development installs list
+Workbench and the feature plugin in the same command.
 
 ## Quick Start With Official DSH
 
@@ -47,7 +54,7 @@ Stop a running DSH Web process before changing Profile plugins.
 Use this today, before the first npm release:
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
 ```
 
 For a reproducible install, replace `#main` with a tag or full commit SHA.
@@ -57,7 +64,7 @@ For a reproducible install, replace `#main` with a tag or full commit SHA.
 After `@relay/dsh-plugin-workbench` is published to npm, install it with:
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest
 ```
 
 At the time this README was written, the npm package had not been published yet.
@@ -66,7 +73,7 @@ If the command reports `404 Not Found`, use the GitHub install above.
 ### 2. Start or restart DSH Web
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 web
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 web
 ```
 
 If you already have a `dsh` command installed, `dsh web` is equivalent. Restart

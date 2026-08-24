@@ -9,8 +9,13 @@
 增加一个可复用的 Workbench 壳层。其他插件可以通过它注册右侧面板和底部面板，
 不需要修改 DSH 官方核心代码。
 
-这个包本身不会增加一个明显的功能界面。普通用户通常不需要单独安装它，而是直接
-安装 Files 或 Terminal 这样的功能插件；这些功能插件会自动安装 Workbench。
+这个包本身不会增加一个明显的功能界面。普通用户通常会把它和 Files 或 Terminal
+这样的功能插件一起安装。
+
+![DSH Web 中承载 Relay Files 右侧面板的 Workbench](docs/images/dsh-workbench-files-panel.png)
+
+截图来自官方 DSH `0.1.1-rc.2`，安装了 Workbench 和 Files。单独安装 Workbench
+时，DSH 会保持默认布局，直到某个功能插件注册视图。
 
 ## 我需要这个插件吗？
 
@@ -20,8 +25,10 @@
 - 开发另一个 DSH Workbench 视图插件；
 - 希望先在某个 DSH Profile 里准备好公共 Workbench 布局，再安装本地功能插件。
 
-如果你只是想浏览文件或打开终端，不需要先手动安装 Workbench，直接安装
-`@relay/dsh-plugin-files` 或 `@relay/dsh-plugin-terminal` 即可。
+使用 GitHub 开发版本的 `@relay/dsh-plugin-files` 或
+`@relay/dsh-plugin-terminal` 时，需要手动一起安装 Workbench。DSH Profile 中的
+pnpm 会阻止 GitHub 包作为传递依赖，所以开发版本安装命令会同时列出 Workbench 和
+功能插件。
 
 ## 官方 DSH 快速开始
 
@@ -43,7 +50,7 @@ DSH 仍是开发预览版本，后续可能出现不兼容变化。
 在首个 npm 版本发布前，当前推荐使用 GitHub 安装：
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
 ```
 
 如果希望可复现，请把 `#main` 改成具体 Tag 或完整 commit SHA。
@@ -53,7 +60,7 @@ npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/rel
 `@relay/dsh-plugin-workbench` 发布到 npm 后，可以这样安装：
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest
 ```
 
 编写本文档时，该 npm 包尚未发布。如果命令提示 `404 Not Found`，请使用上面的
@@ -62,7 +69,7 @@ GitHub 安装方式。
 ### 2. 启动或重启 DSH Web
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 web
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 web
 ```
 
 如果你已经安装了 `dsh` 命令，也可以运行 `dsh web`。安装、更新或删除插件后都
