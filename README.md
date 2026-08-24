@@ -1,8 +1,17 @@
 # Relay DSH Workbench Plugin
 
+[![npm version](https://img.shields.io/npm/v/relay-dsh-plugin-workbench?label=npm)](https://www.npmjs.com/package/relay-dsh-plugin-workbench)
+[![CI](https://github.com/yangbobo2021/relay-dsh-plugin-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/yangbobo2021/relay-dsh-plugin-workbench/actions/workflows/ci.yml)
+[![npm downloads](https://img.shields.io/npm/dm/relay-dsh-plugin-workbench?label=downloads)](https://www.npmjs.com/package/relay-dsh-plugin-workbench)
+[![GitHub stars](https://img.shields.io/github/stars/yangbobo2021/relay-dsh-plugin-workbench?style=flat)](https://github.com/yangbobo2021/relay-dsh-plugin-workbench/stargazers)
+[![MIT license](https://img.shields.io/github/license/yangbobo2021/relay-dsh-plugin-workbench)](LICENSE)
+[![DSH compatibility](https://img.shields.io/badge/DSH-0.1.1--rc.2-2f7d68)](https://github.com/deepseek-ai/deepseek-harness)
+[![Trusted Publishing](https://img.shields.io/badge/npm_trusted_publishing-next_release-2f9e44)](.github/workflows/release.yml)
+
 English | [中文](README.zh.md)
 
-**npm package:** `relay-dsh-plugin-workbench`
+**npm package:** [`relay-dsh-plugin-workbench`](https://www.npmjs.com/package/relay-dsh-plugin-workbench)
+· [All Relay DSH plugins](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.md)
 
 `relay-dsh-plugin-workbench` adds a reusable Workbench shell to the official
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH) Web

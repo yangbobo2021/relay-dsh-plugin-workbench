@@ -2,6 +2,7 @@
   "name": "relay-dsh-plugin-workbench",
   "version": "0.1.0",
   "description": "Extensible workbench shell for DeepSeek Harness with generic side and bottom view registration.",
+  "license": "MIT",
   "type": "module",
   "main": "lib/host-plugin.js",
   "engines": { "node": ">=22.13" },
