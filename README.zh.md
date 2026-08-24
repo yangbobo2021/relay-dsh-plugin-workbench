@@ -13,6 +13,12 @@
 **npm 包名：** [`relay-dsh-plugin-workbench`](https://www.npmjs.com/package/relay-dsh-plugin-workbench)
 · [全部 Relay DSH 插件](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.zh.md)
 
+[![在官方 DSH 中实装运行的 Relay 插件](https://raw.githubusercontent.com/yangbobo2021/Relay/codex/relay-foundation/docs/media/dsh-plugin-suite-demo.gif)](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.zh.md)
+
+*演示来自官方 DSH 上的真实 npm 安装：对话后端返回真实回复，Workbench
+承载文件视图和实际执行命令的终端。[观看 H.264
+MP4](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/media/dsh-plugin-suite-demo.mp4?raw=1)。*
+
 `relay-dsh-plugin-workbench` 为官方
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）Web UI
 增加一个可复用的 Workbench 壳层。其他插件可以通过它注册右侧面板和底部面板，
