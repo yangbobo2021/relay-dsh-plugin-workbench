@@ -8,7 +8,14 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
-    "types": ["react"]
+    "types": [
+      "react"
+    ]
   },
-  "include": ["src/client/**/*.ts", "src/client/**/*.tsx", "src/client/**/*.d.ts"]
+  "include": [
+    "src/client/**/*.ts",
+    "src/client/**/*.tsx",
+    "src/client/**/*.d.ts"
+  ],
+  "extends": "./node_modules/.relay-dsh-types.json"
 }

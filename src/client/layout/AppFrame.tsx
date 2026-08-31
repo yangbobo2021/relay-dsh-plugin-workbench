@@ -322,6 +322,7 @@ export function AppFrame({
   actions,
   renderSlot,
   workbench,
+  SessionProvider,
 }: AppFrameProps) {
   const panels = useStore(s => s)
   const workbenchSnapshot = useSyncExternalStore(workbench.subscribe, workbench.getSnapshot, workbench.getSnapshot)
@@ -484,7 +485,7 @@ export function AppFrame({
       </div>
       <RightColumn
         sideOpen={sideOpen}
-        details={renderSlot('details', {})}
+        details={<SessionProvider>{renderSlot('details', {})}</SessionProvider>}
         auxiliary={(
           <AuxiliaryWorkspace
             activeView={panels.sideView}

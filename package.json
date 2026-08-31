@@ -13,8 +13,12 @@
   "license": "MIT",
   "type": "module",
   "main": "lib/host-plugin.js",
-  "engines": { "node": ">=22.13" },
-  "publishConfig": { "access": "public" },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepare:dsh": "scripts/link-dsh-development-peers.sh",
     "prebuild": "npm run prepare:dsh && node -e \"require('node:fs').rmSync('lib',{recursive:true,force:true})\"",
@@ -35,13 +39,38 @@
     "./typert": "./lib/typert.host.js",
     "./package.json": "./package.json"
   },
-  "files": ["README.md", "README.zh.md", "docs/images", "contracts.d.ts", "contracts.js", "cordis.patch.yml", "lib/client.js", "lib/client.js.map", "lib/host-plugin.js", "lib/host-plugin.js.map", "lib/typert.host.js", "lib/typert.host.js.map"],
+  "files": [
+    "README.md",
+    "README.zh.md",
+    "docs/images",
+    "contracts.d.ts",
+    "contracts.js",
+    "cordis.patch.yml",
+    "lib/client.js",
+    "lib/client.js.map",
+    "lib/host-plugin.js",
+    "lib/host-plugin.js.map",
+    "lib/typert.host.js",
+    "lib/typert.host.js.map",
+    "docs/dsh-0.1.2-alpha.2.md"
+  ],
   "dsh": {
     "client": {
-      "inject": ["@deepseek-ai/dsh-client-runtime", "@deepseek-ai/dsh-client-ui-primitives", "@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-ui-theme"],
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-client-store"
+      ],
       "platform": "web"
     },
-    "bundle": { "patch": "./cordis.patch.yml" }
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   },
   "devDependencies": {
     "@types/react": "~18.3.1",
@@ -53,5 +82,9 @@
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "peerDependenciesMeta": { "react": { "optional": true } }
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
 }
