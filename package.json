@@ -1,6 +1,6 @@
 {
   "name": "relay-dsh-plugin-workbench",
-  "version": "0.2.0-rc.1",
+  "version": "0.2.0",
   "description": "Extensible workbench shell for DeepSeek Harness with generic side and bottom view registration.",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "tag": "next"
+    "tag": "latest"
   },
   "scripts": {
     "prepare:dsh": "scripts/link-dsh-development-peers.sh",
