@@ -1,4 +1,5 @@
-import { defineStore, type EngineStoreHandle } from '@deepseek-ai/dsh-client-store'
+import type { EngineStoreHandle } from '@deepseek-ai/dsh-client-store'
+import { defineStore } from './compatible-store.ts'
 import {
   BOTTOM_PANEL_DEFAULT, BOTTOM_PANEL_MAX, BOTTOM_PANEL_MIN,
   clampWidth, DETAILS_DEFAULT, DETAILS_MAX, DETAILS_MIN,

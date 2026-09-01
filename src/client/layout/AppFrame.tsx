@@ -37,7 +37,7 @@ export type AppFrameProps =
   & PropsRuntime<'root'>
   & PropsRenderSlots<'sidebar' | 'conversation' | 'details' | 'workbench.side.view' | 'workbench.bottom.view' | 'shell.overlay'>
   & PropsStore<ReturnType<typeof createLayoutStore>>
-  & { workbench: IWorkbench }
+  & { workbench: IWorkbench; detailsUseSessionProvider: boolean }
 
 /** Right column keeps both surfaces mounted and switches only visibility. */
 function RightColumn(props: { sideOpen: boolean; details?: ReactNode; auxiliary?: ReactNode }) {
@@ -323,6 +323,7 @@ export function AppFrame({
   renderSlot,
   workbench,
   SessionProvider,
+  detailsUseSessionProvider,
 }: AppFrameProps) {
   const panels = useStore(s => s)
   const workbenchSnapshot = useSyncExternalStore(workbench.subscribe, workbench.getSnapshot, workbench.getSnapshot)
@@ -485,7 +486,9 @@ export function AppFrame({
       </div>
       <RightColumn
         sideOpen={sideOpen}
-        details={<SessionProvider>{renderSlot('details', {})}</SessionProvider>}
+        details={detailsUseSessionProvider
+          ? <SessionProvider>{renderSlot('details', {})}</SessionProvider>
+          : renderSlot('details', {})}
         auxiliary={(
           <AuxiliaryWorkspace
             activeView={panels.sideView}

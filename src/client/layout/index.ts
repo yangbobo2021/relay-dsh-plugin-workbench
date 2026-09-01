@@ -50,7 +50,9 @@ export function apply(ctx: ClientContext): void {
       store: createLayoutStore,
       inject: (actions: PanelActions) => {
         workbench.attachPanels(actions)
-        return { workbench }
+        // In the older renderer, root already supplies the active session.
+        // The split ui-session renderer requires an explicit scope boundary.
+        return { workbench, detailsUseSessionProvider: ctx.get('uiSession') !== undefined }
       },
     }, AppFrame)
     return () => {

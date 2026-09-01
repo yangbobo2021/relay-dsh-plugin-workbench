@@ -1,6 +1,6 @@
 {
   "name": "relay-dsh-plugin-workbench",
-  "version": "0.1.0",
+  "version": "0.2.0-rc.1",
   "description": "Extensible workbench shell for DeepSeek Harness with generic side and bottom view registration.",
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
     "node": ">=22.13"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "next"
   },
   "scripts": {
     "prepare:dsh": "scripts/link-dsh-development-peers.sh",
@@ -64,9 +65,14 @@
         "@deepseek-ai/dsh-client-ui-session",
         "@deepseek-ai/dsh-api-session-controller",
         "@deepseek-ai/dsh-api-workspace-controller",
-        "@deepseek-ai/dsh-client-store"
+        "@deepseek-ai/dsh-client-store",
+        "@deepseek-ai/dsh-client-runtime"
       ],
-      "platform": "web"
+      "platform": "web",
+      "external": [
+        "@deepseek-ai/dsh-client-store",
+        "@deepseek-ai/dsh-client-runtime/client"
+      ]
     },
     "bundle": {
       "patch": "./cordis.patch.yml"

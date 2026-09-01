@@ -28,6 +28,7 @@ const required = new Set([
   ...(manifest.dsh?.client?.inject ?? []),
 ].filter(name => name.startsWith('@deepseek-ai/')).map(name => name.slice('@deepseek-ai/'.length)));
 for (const name of required) {
+  if (name === 'dsh-client-runtime' && prepared.has('dsh-client-store')) continue;
   if (!prepared.has(name)) throw new Error(`Missing prepared official DSH peer ${name}. Run pnpm install and build in DSH_ROOT.`);
 }
 mkdirSync(targetRoot, { recursive: true });
