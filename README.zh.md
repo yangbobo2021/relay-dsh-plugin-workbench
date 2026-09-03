@@ -1,12 +1,12 @@
 # Relay DSH Workbench 插件
 
-> **现已支持最新 DSH `0.1.2-alpha.3`。** 插件 `0.2.1` 已在 DSH `0.1.2-alpha.3`、`0.1.2-alpha.2` 与 `0.1.1-rc.2` 上完成兼容验证。[安装插件，立即体验最新版 DSH](https://www.npmjs.com/package/relay-dsh-plugin-workbench) · [兼容性详情](docs/dsh-0.1.2-alpha.3.md)。
+> **现已支持 DSH `0.1.2-rc.1`，并保留对 `0.1.2-alpha.3` 的兼容。** 插件 `0.2.2` 已在两个版本上完成验证。[从 npm 安装](https://www.npmjs.com/package/relay-dsh-plugin-workbench) · [兼容性证据](https://github.com/yangbobo2021/Relay/tree/codex/relay-foundation/dsh-lab/dsh-0.1.2-rc.1-20260903)。
 
-> **发布通道：** `latest` → `0.2.1`；`next` → `0.2.1-rc.1`。
+> **发布通道：** `latest` → `0.2.2`；`next` → `0.2.1-rc.1`。
 
 ```bash
-npx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add relay-dsh-plugin-workbench@0.2.1
-npx @deepseek-ai/dsh@0.1.2-alpha.3 web
+npx @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile web add relay-dsh-plugin-workbench@0.2.2
+npx @deepseek-ai/dsh@0.1.2-rc.1 web
 ```
 
 [![npm 版本](https://img.shields.io/npm/v/relay-dsh-plugin-workbench?label=npm)](https://www.npmjs.com/package/relay-dsh-plugin-workbench)
@@ -74,7 +74,7 @@ DSH 仍是开发预览版本，后续可能出现不兼容变化。
 如果你想测试尚未发布的最新开发代码，可以使用 GitHub 安装：
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
+pnpm dlx @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
 ```
 
 如果希望可复现，请把 `#main` 改成具体 Tag 或完整 commit SHA。
@@ -84,13 +84,13 @@ pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add github:yangbobo
 可以这样安装 npm 正式包：
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add relay-dsh-plugin-workbench@latest
+pnpm dlx @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile web add relay-dsh-plugin-workbench@latest
 ```
 
 ### 2. 启动或重启 DSH Web
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 web
+pnpm dlx @deepseek-ai/dsh@0.1.2-rc.1 web
 ```
 
 如果你已经安装了 `dsh` 命令，也可以运行 `dsh web`。安装、更新或删除插件后都
