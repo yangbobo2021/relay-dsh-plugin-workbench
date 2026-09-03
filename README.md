@@ -1,12 +1,12 @@
 # Relay DSH Workbench Plugin
 
-> **Now supports the latest DSH `0.1.2-alpha.3`.** Plugin `0.2.1` is verified on DSH `0.1.2-alpha.3`, `0.1.2-alpha.2`, and `0.1.1-rc.2`. [Install it and try the latest DSH](https://www.npmjs.com/package/relay-dsh-plugin-workbench) · [Compatibility details](docs/dsh-0.1.2-alpha.3.md).
+> **Now supports DSH `0.1.2-rc.1` while retaining `0.1.2-alpha.3` compatibility.** Plugin `0.2.2` is verified on both releases. [Install it from npm](https://www.npmjs.com/package/relay-dsh-plugin-workbench) · [Compatibility evidence](https://github.com/yangbobo2021/Relay/tree/codex/relay-foundation/dsh-lab/dsh-0.1.2-rc.1-20260903).
 
-> **Release channels:** `latest` → `0.2.1`; `next` → `0.2.1-rc.1`.
+> **Release channels:** `latest` → `0.2.2`; `next` → `0.2.1-rc.1`.
 
 ```bash
-npx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add relay-dsh-plugin-workbench@0.2.1
-npx @deepseek-ai/dsh@0.1.2-alpha.3 web
+npx @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile web add relay-dsh-plugin-workbench@0.2.2
+npx @deepseek-ai/dsh@0.1.2-rc.1 web
 ```
 
 [![npm version](https://img.shields.io/npm/v/relay-dsh-plugin-workbench?label=npm)](https://www.npmjs.com/package/relay-dsh-plugin-workbench)
@@ -78,7 +78,7 @@ Stop a running DSH Web process before changing Profile plugins.
 Use this when you want the latest development build:
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
+pnpm dlx @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main
 ```
 
 For a reproducible install, replace `#main` with a tag or full commit SHA.
@@ -88,13 +88,13 @@ For a reproducible install, replace `#main` with a tag or full commit SHA.
 Install the published package with:
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 plugin --profile web add relay-dsh-plugin-workbench@latest
+pnpm dlx @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile web add relay-dsh-plugin-workbench@latest
 ```
 
 ### 2. Start or restart DSH Web
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.2-alpha.3 web
+pnpm dlx @deepseek-ai/dsh@0.1.2-rc.1 web
 ```
 
 If you already have a `dsh` command installed, `dsh web` is equivalent. Restart
